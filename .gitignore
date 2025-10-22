@@ -1,17 +1,36 @@
-# Dependencias de Node.js
-/frontend/node_modules
-/frontend/dist
-.DS_Store
+# =================================================
+# General
+# =================================================
+# Archivos de logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
 
-# Archivos de compilación de .NET
-# Usamos **/ para que funcione sin importar el nombre de la carpeta del backend
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# =================================================
+# Frontend (FrontEmp - Vite/React)
+# =================================================
+/FrontEmp/node_modules/
+/FrontEmp/dist/
+/FrontEmp/.vite/
+/FrontEmp/coverage/
+
+# =================================================
+# Backend (BackEmp - .NET)
+# =================================================
 **/bin/
 **/obj/
 
-# Archivos de entorno (si los usas)
+# =================================================
+# Archivos de entorno y de IDE
+# =================================================
 .env
-.env*.local
-
-# Archivos de IDE
+.env.local
+.env.*.local
 .vscode/
 .vs/
+.idea/
