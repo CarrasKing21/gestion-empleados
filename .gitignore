@@ -1,0 +1,17 @@
+# Dependencias de Node.js
+/frontend/node_modules
+/frontend/dist
+.DS_Store
+
+# Archivos de compilación de .NET
+# Usamos **/ para que funcione sin importar el nombre de la carpeta del backend
+**/bin/
+**/obj/
+
+# Archivos de entorno (si los usas)
+.env
+.env*.local
+
+# Archivos de IDE
+.vscode/
+.vs/

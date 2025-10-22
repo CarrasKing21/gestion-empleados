@@ -1,0 +1,96 @@
+/* EmpleadoTable.module.css */
+
+.tableHeader {
+  display: flex; /* Usa flexbox para el diseño */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: flex-start; /* Alinea los elementos al inicio del eje transversal */
+  gap: 1rem; /* Espacio entre los elementos hijos */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+.controlsContainer {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: flex-start; /* Alinea los elementos al principio del eje principal */
+  align-items: center; /* Alinea los elementos al centro del eje transversal */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  gap: 1rem; /* Espacio entre el botón y la búsqueda */
+}
+
+.searchControls {
+  display: flex; /* Usa flexbox para el diseño */
+  align-items: center; /* Alinea los elementos al centro del eje transversal */
+  gap: 0.5rem; /* Espacio entre los elementos hijos */
+  position: relative; /* Establece el contexto de posicionamiento para elementos absolutos */
+  align-self: center; /* Alinea este elemento al centro dentro de su contenedor flex */
+}
+
+.tableContainer {
+  /* Centramos el contenedor de la tabla */
+  max-width: 1200px; /* Establece un ancho máximo para la tabla */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.searchInput {
+  padding: 8px 12px; /* Relleno interno */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid var(--color-border); /* Borde con color de variable CSS */
+  background-color: var(--color-bg); /* Color de fondo con variable CSS */
+  color: var(--color-text); /* Color del texto con variable CSS */
+  font-size: 14px; /* Tamaño de fuente */
+  transition: border-color 0.2s, box-shadow 0.2s; /* Transición suave para el borde y la sombra */
+  width: 250px; /* Ancho fijo del input */
+}
+
+.searchInput:focus {
+  outline: none; /* Elimina el contorno por defecto al enfocar */
+  border-color: var(--color-accent); /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 0 2px rgba(0, 136, 248, 0.4); /* Añade una sombra al enfocar */
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted, #a0aec0); /* Color del texto del placeholder */
+}
+
+.actions {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 1rem; /* Espacio entre los botones */
+}
+
+.centered {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: 3rem; /* Relleno interno */
+}
+
+.spinnerContainer {
+  display: flex; /* Usa flexbox para el diseño */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  flex-shrink: 0; /* Evita que el contenedor se encoja */
+}
+
+.paginationControls {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: flex-end; /* Alinea los elementos al final del eje principal */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 0.5rem; /* Espacio entre los elementos hijos */
+  margin-top: 1.5rem; /* Margen superior */
+}
+
+.pageNumbers {
+  display: flex; /* Usa flexbox para el diseño */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 0.5rem; /* Espacio entre los números de página */
+}
+
+.pageNumberButton {
+  min-width: 40px; /* Ancho mínimo para los botones de página */
+  padding: 0.5rem; /* Relleno interno */
+}
+
+.dots {
+  padding: 0 0.5rem; /* Relleno horizontal */
+  color: var(--color-text); /* Color del texto */
+}

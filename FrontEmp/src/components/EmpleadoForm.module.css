@@ -1,0 +1,157 @@
+/* EmpleadoForm.module.css */
+.modal {
+  position: fixed; /* Posicionamiento fijo para cubrir toda la ventana */
+  top: 0; /* Alineado al borde superior */
+  left: 0; /* Alineado al borde izquierdo */
+  right: 0; /* Alineado al borde derecho */
+  bottom: 0; /* Alineado al borde inferior */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente oscuro */
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.formContainer {
+  background-color: var(--color-panel); /* Color de fondo del contenedor del formulario */
+  padding: 2rem; /* Relleno interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 500px; /* Ancho máximo del formulario */
+}
+
+.formGroup {
+  margin-bottom: 1.25rem; /* Margen inferior para separar grupos de formulario */
+}
+
+.formGroup label {
+  display: block; /* Hace que la etiqueta ocupe todo el ancho */
+  margin-bottom: 0.5rem; /* Margen inferior para separar de su input */
+  font-weight: 600; /* Texto en negrita */
+  color: var(--color-text-muted); /* Color de texto atenuado */
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 0.75rem; /* Relleno interno */
+  border: 1px solid var(--color-border); /* Borde con color de variable CSS */
+  border-radius: 6px; /* Bordes redondeados */
+  background-color: var(--color-bg); /* Color de fondo con variable CSS */
+  color: var(--color-text); /* Color del texto con variable CSS */
+  font-size: 1rem; /* Tamaño de fuente */
+  transition: border-color 0.2s, box-shadow 0.2s; /* Transición suave para el borde y la sombra */
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none; /* Elimina el contorno por defecto al enfocar */
+  border-color: var(--color-accent); /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 0 2px rgba(0, 136, 248, 0.4); /* Añade una sombra al enfocar */
+}
+
+/* Cambia el color del icono del calendario a blanco en temas oscuros */
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invierte los colores (útil para temas oscuros) */
+  cursor: pointer; /* Cambia el cursor a puntero */
+}
+
+.formGroup input.error,
+.formGroup select.error {
+  border-color: #f44336; /* Color del borde para campos con error */
+}
+
+.formActions {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: flex-end; /* Alinea los elementos al final del eje principal */
+  gap: 1rem; /* Espacio entre los botones */
+  margin-top: 2rem; /* Margen superior */
+}
+
+.errorText {
+  color: #f44336; /* Color del texto de error */
+  font-size: 0.8rem; /* Tamaño de fuente más pequeño */
+  margin-top: 0.25rem; /* Margen superior */
+}
+
+.spinner {
+  display: inline-block; /* Muestra como bloque en línea */
+  width: 1em; /* Ancho del spinner */
+  height: 1em; /* Alto del spinner */
+  border: 2px solid currentColor; /* Borde con el color de texto actual */
+  border-right-color: transparent; /* Hace que un lado del borde sea transparente */
+  border-radius: 50%; /* Forma circular */
+  animation: spin 0.6s linear infinite; /* Aplica la animación 'spin' */
+  margin-right: 0.5rem; /* Margen a la derecha */
+  vertical-align: middle; /* Alineación vertical */
+}
+
+@keyframes spin {
+  to { /* Estado final de la animación */
+    transform: rotate(360deg); /* Rota 360 grados */
+  }
+}
+
+
+/* Definimos las animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; } /* Empieza completamente transparente */
+  to { opacity: 1; } /* Termina completamente opaco */
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; } /* Empieza completamente opaco */
+  to { opacity: 0; } /* Termina completamente transparente */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; } /* Empieza 30px arriba y transparente */
+  to { transform: translateY(0); opacity: 1; } /* Termina en su posición y opaco */
+}
+
+@keyframes slideOut {
+  from { transform: translateY(0); opacity: 1; } /* Empieza en su posición y opaco */
+  to { transform: translateY(-30px); opacity: 0; } /* Termina 30px arriba y transparente */
+}
+
+
+/* Clases para controlar la animación del fondo del modal */
+.modalFadeIn {
+  animation: fadeIn 0.3s ease-out forwards; /* Aplica la animación fadeIn */
+}
+
+.modalFadeOut {
+  animation: fadeOut 0.3s ease-in forwards; /* Aplica la animación fadeOut */
+}
+
+/* Clases para controlar la animación del contenedor del formulario */
+.formSlideIn {
+  animation: slideIn 0.3s ease-out forwards; /* Aplica la animación slideIn */
+}
+
+.formSlideOut {
+  animation: slideOut 0.3s ease-in forwards; /* Aplica la animación slideOut */
+}
+
+.form h2 {
+  margin-top: 0; /* Elimina el margen superior */
+  margin-bottom: 1.5rem; /* Margen inferior */
+  color: var(--color-text); /* Color del texto */
+  text-align: center; /* Centra el texto */
+}
+
+.apiErrorContainer {
+  background-color: #ffdddd; /* Color de fondo para el contenedor de error */
+  border-left: 6px solid #f44336; /* Borde izquierdo rojo */
+  color: #5a2121; /* Color del texto de error */
+  padding: 1rem; /* Relleno interno */
+  margin-bottom: 1rem; /* Margen inferior */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 0.9rem; /* Tamaño de fuente */
+}
+
+.apiErrorContainer p {
+  margin: 0; /* Elimina el margen por defecto del párrafo */
+  white-space: pre-wrap; /* Mantiene los saltos de línea y espacios en blanco */
+}
